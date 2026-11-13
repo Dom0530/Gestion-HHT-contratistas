@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Acceso · HHT Hub{% endblock %}
+{% block content %}
+<div class="login-page">
+    <div class="login-brand">
+        <div class="brand-mark">U</div>
+        <div>
+            <div class="eyebrow">PLATAFORMA SST</div>
+            <div class="brand-title">HHT Hub</div>
+        </div>
+    </div>
+    <div class="login-card">
+        <div class="eyebrow">ACCESO SEGURO</div>
+        <h1>Registro y distribución de HHT</h1>
+        <p class="muted">Gestiona la información mensual de tu empresa de forma simple y trazable.</p>
+        <form method="post" class="stack">
+            <label>Usuario<input name="username" autocomplete="username" placeholder="Ingresa tu usuario" required></label>
+            <label>Contraseña<input type="password" name="password" autocomplete="current-password" placeholder="Ingresa tu contraseña" required></label>
+            <button class="btn btn-primary btn-large" type="submit">Ingresar</button>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="alert error">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+        <div class="demo-box">
+            <div><strong>Demo contratista</strong><span>contratista_demo / 123456</span></div>
+            <div><strong>Demo administrador</strong><span>admin_demo / admin123</span></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
